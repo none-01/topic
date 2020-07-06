@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>话题列表</title>
+		<script type="text/javascript" src="js/jQuery/jquery-2.0.2.min.js"></script>
+		<script type="text/javascript" src="layui/layui.js" th:src="@{layui/layui.js}"></script>
+		<script type="text/javascript" src="js/topicList/topicList.js"></script>
+		<script type="text/javascript" src="js/topicList/addTopic.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<script type="text/javascript">
+		$(function () {
+			$("body").on("click",".topicItem",function () {
+				var topicInfoId=$(this).prop("id");
+				window.location.href="topicContent/"+topicInfoId;
+			});
+		});
+	</script>
+	<body>
+		<div style="padding: 10px; padding-bottom:20px;width: 370px;margin: auto; background: #F2F2F2;">
+			<div>
+				<a href="#" >话题列表</a>
+			</div>
+			<div style="text-align: center;">
+				<h1>
+					话题列表
+				</h1>
+			</div>
+			<div>
+				<button type="button" onclick="addTopicUI()">新增话题</button>
+			</div>
+			
+			<div class="topicList" style=" width: 370px;">
+			</div>
+			<div class="pageTopic" style="margin-top: 50px;">
+			</div>
+		</div>
+	</body>
+</html>

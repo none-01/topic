@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.5.4//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.topic.dao.UserDao">
+        <insert id="userReg">
+            insert into user_tb(
+                phoneNumber,
+                password,
+                invite,
+                createDate
+            )values(
+                #{phoneNumber},
+                #{password},
+                #{invite},
+                #{createDate}
+            )
+        </insert>
+        
+        <select id="userLogin" resultType="User">
+                select userId,phoneNumber
+                from user_tb
+                where phoneNumber=#{phoneNumber}
+                and password=#{password}
+        </select>
+</mapper>

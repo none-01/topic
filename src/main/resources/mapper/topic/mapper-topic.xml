@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.5.4//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.topic.dao.TopicDao">
+    <select id="queryTopicInfo" resultType="Topic">
+        select topicInfoId,topicImg,topicTitle,topicBrief
+        from topic_info_tb
+    </select>
+    
+    <insert id="addTopicInfo">
+        insert into topic_info_tb(
+            topicImg,
+            topicTitle,
+            topicBrief,
+            topicContent,
+            createDate
+        )values(
+            #{topicImg},
+            #{topicTitle},
+            #{topicBrief},
+            #{topicContent},
+            #{createDate}
+        )
+    </insert>
+
+    <select id="querOneTopic" resultType="Topic">
+        select topicImg, topicTitle,topicContent
+        from topic_info_tb
+        where topicInfoId=#{topicInfoId}
+    </select>
+</mapper>

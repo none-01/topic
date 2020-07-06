@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<title>话题内容</title>
+	</head>
+	<body>
+		<div style="padding: 10px; padding-bottom:20px;width: 350px;margin: auto; background: #F2F2F2;">
+			<div>
+				<a href="../topicList">话题列表</a>
+				<span>>内容页面</span>
+			</div>
+			<div style="text-align: center;">
+				<h1 th:text="${topic.topicTitle}">
+
+				</h1>
+			</div>
+			<div>
+				<img width="150px" th:src="@{'../'+${topic.topicImg}}">
+			</div>
+			<p  th:text="${topic.topicContent}" style="font-size:30px ; text-indent:1em; word-wrap: break-word;">
+
+			</p>
+		</div>
+	</body>
+</html>
